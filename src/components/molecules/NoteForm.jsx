@@ -48,15 +48,13 @@ const NoteForm = ({ initialData = null, onSubmit }) => {
     }
   };
 
-  const handleOnChange = (setValue , e) => {
-    console.log(data)
-  }
+  
 
   return (
     <form onSubmit={handleSubmit} className="p-4 border rounded-lg shadow-md flex flex-col gap-4 w-[400px]">
       <h2 className="text-xl font-semibold">{initialData ? "Edit Note" : "Add Note"}</h2>
 
-      <Input labelTxt="Name:" value={name} onChange={(e) => setName(e.target.value)} placeholder="Full Name" showError={errors.name} />
+      <Input labelTxt="Name:" value={name} onChange={(e) => setName(e.target.value)}  placeholder="Full Name" showError={errors.name} />
       <DateInput labelTxt="Date of Birth:" value={dob} onChange={(e) => setDob(e.target.value)} placeholder="Select a date" showError={errors.dob} />
       <Input labelTxt="Title:" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Note Title" showError={errors.title} />
       <TextArea labelTxt="Content:" value={content} onChange={(e) => setContent(e.target.value)} placeholder="Write your note..." showError={errors.content} />
